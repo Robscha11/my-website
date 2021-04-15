@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 function App() {
-    const [count, setCount] = React.useState(0)
+    const [count, setCount] = React.useState(0);
 
     return(
         <div>
@@ -11,4 +11,4 @@ function App() {
         </div>
         )
     }
-ReactDOM.render(<App></App>, document.getElementById('app'))
+ReactDOM.render(<App></App>, document.getElementById('app'));

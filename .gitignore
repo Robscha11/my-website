@@ -1,5 +1,6 @@
 .netlify
 node_modules
 .parcel-cache
+package-lock.json
 .cache
 dist
