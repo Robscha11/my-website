@@ -1,14 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('body,html').animate({
+      scrollTop: $(hash).offset().top
+      }, 1200, function(){
+      window.location.hash = hash;
+     });
+     } 
+    });
+});
 
-function App() {
-    const [count, setCount] = React.useState(0);
+var width = $(window).width(); 
 
-    return(
-        <div>
-        Hello from React!
-        <button onClick={() => setCount(count +1)}>Click me {count}</button>
-        </div>
-        )
+window.onscroll = function(){
+if ((width >= 900)){
+    if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        $("#middle").css("background-size","150% auto");
+    }else{
+        $("#middle").css("background-size","100% auto");        
     }
-ReactDOM.render(<App></App>, document.getElementById('app'));
+}
+};
+
+setTimeout(function(){
+    $("#loading").addClass("animated fadeOut");
+    setTimeout(function(){
+      $("#loading").removeClass("animated fadeOut");
+      $("#loading").css("display","none");
+    },800);
+},1450);
